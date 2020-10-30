@@ -2,16 +2,21 @@ import axios from "axios";
 
 let url = "https://www.dnd5eapi.co"
 
-export async function getClass(){
+export async function getClass(cb){
     await axios.get(`${url}/api/classes/`)
     .then(res=>{
         //to get list of classes
-        console.log(res);
-        //to get specific classes
-        axios.get(`${url}${res.data.results[0].url}`)
-        .then(res=>{
-            console.log(res);
-        })
+        cb(res.data.results);
+    }).catch(err=>{
+        console.log(err);
+    })
+}
+
+export async function getSpecificClass(classes,cb){
+    await axios.get(`${url}${classes.url}`)
+    .then(res=>{
+        //to get list of races
+        cb(res.data);
     }).catch(err=>{
         console.log(err);
     })

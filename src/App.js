@@ -5,14 +5,19 @@ import { Navbar, Nav} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { getClass, getRace } from './util/functions';
 import Race from './components/Race';
+import Class from './components/Class';
 
 function App() {
 
   const [allRace, setAllRace] = useState([]);
   const [specRace, setSpecRace] = useState([]);
 
+  const [allClass, setAllClass] = useState([]);
+  const [specClass, setSpecClass] = useState([]);
+
   useEffect(() => {
     getRace(setAllRace);
+    getClass(setAllClass);
   }, [])
 
   return (
@@ -41,6 +46,7 @@ function App() {
         </Route>
         <Route path="/class" >
           <h1>Class</h1>
+          <Class classes={allClass} sclass={specClass} setSclass={setSpecClass}/>
         </Route>
         <Route path="/ability" >
           <h1>Ability Score</h1>
