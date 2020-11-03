@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { getClass, getRace } from './util/functions';
+import { getClass, getRace, setChoices } from './util/functions';
 import Race from './components/Race';
 import Class from './components/Class';
+import Overall from './components/Overall';
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
 
   const [allClass, setAllClass] = useState([]);
   const [specClass, setSpecClass] = useState([]);
+  const [rChoices, setRaceChoice] = useState({});
+  const [cChoices, setClassChoice] = useState({});
 
   useEffect(() => {
     getRace(setAllRace);
@@ -41,18 +44,17 @@ function App() {
           <h1>Home</h1>
         </Route>
         <Route path="/race" >
-          <h1>Race</h1>
-          <Race race={allRace} srace={specRace} setSrace={setSpecRace}/>
+          <Race race={allRace} srace={specRace} setSrace={setSpecRace} choices={rChoices} setMyChoice={setRaceChoice} setChoices={setChoices}/>
         </Route>
         <Route path="/class" >
-          <h1>Class</h1>
-          <Class classes={allClass} sclass={specClass} setSclass={setSpecClass}/>
+          <Class classes={allClass} sclass={specClass} setSclass={setSpecClass} choices={cChoices} setMyChoice={setClassChoice} setChoices={setChoices}/>
         </Route>
         <Route path="/ability" >
           <h1>Ability Score</h1>
         </Route>
         <Route path="/overall" >
           <h1>Overall</h1>
+          <Overall srace={specRace} sclass={specClass} rChoices={rChoices} cChoices={cChoices}/>
         </Route>
       </Switch>
 
