@@ -6,8 +6,8 @@ function SpecificClass({sclass, setChoices, choices, setMyChoice}) {
     return (
         <div>
             {/* class name */}
-            {sclass.name}
-            {sclass&&<div>Hit Die: {sclass.hit_die}</div>}
+            {/* {sclass.name} */}
+            {sclass&&<div>{sclass.hit_die}</div>}
             {sclass.saving_throws&&sclass.saving_throws.map((el,i)=>
             <div key={i}>{el.name}</div>)}
             {sclass.proficiencies&&sclass.proficiencies.map((el,i)=>

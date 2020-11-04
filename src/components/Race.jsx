@@ -1,6 +1,5 @@
 import React from 'react'
-import { Navbar, NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { getSpecificRace } from '../util/functions';
 import SpecificRace from './SpecificRace';
 
@@ -8,19 +7,13 @@ import SpecificRace from './SpecificRace';
 function Race({race, srace, setSrace, setChoices, choices, setMyChoice}) {
     return (
         <div>
-            <Navbar>
-                <Navbar.Brand>Race</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <NavDropdown title="Choose your Race" id="basic-nav-dropdown">
-                        {race.map((el, i) => (
-                            <div key={i} className="text-center">
-                                <NavLink onClick={() => getSpecificRace(el, setSrace, setMyChoice)} to={`/race`}>{el.name}</NavLink>
-                            </div>
-                        ))}
-                    </NavDropdown>
-                </Navbar.Collapse>
-            </Navbar>
+            <DropdownButton id="dropdown-basic-button" title={srace.name?srace.name:"Choose Your Race"}>
+                {race.map((el, i) => (
+                    <div key={i} className="text-center">
+                        <Dropdown.Item onClick={() => getSpecificRace(el, setSrace, setMyChoice)} to={`/race`}>{el.name}</Dropdown.Item>
+                    </div>
+                ))}
+            </DropdownButton>
             <SpecificRace setMyChoice={setMyChoice} srace={srace} choices={choices} setChoices={setChoices}/>
         </div>
     )

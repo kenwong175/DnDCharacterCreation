@@ -6,7 +6,7 @@ function SpecificRace({srace, setChoices, choices, setMyChoice}) {
     return (
         <div>
             {/* race name */}
-            {srace.name}
+            {/* {srace.name} */}
             {/* ability bonus */}
             {srace.ability_bonuses&&srace.ability_bonuses.map((el,i)=>
             <div key={i}>{el.ability_score.name}: +{el.bonus}</div>)}
@@ -24,10 +24,6 @@ function SpecificRace({srace, setChoices, choices, setMyChoice}) {
             {srace.trait_options&&<Choices setMyChoice={setMyChoice} index={srace.trait_options.choose} choice={srace.trait_options.choose} selection={srace.trait_options} choices={choices} setChoices={setChoices} />}
             {/* speed */}
             <div>{srace.speed}</div>
-            {/* subraces choice */}
-            {srace.subraces&&srace.subraces.map((el,i)=>
-            <div key={i}>{el.name}</div>)}
-            
         </div>
     )
 }
