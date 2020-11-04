@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import { DropdownButton, Dropdown} from 'react-bootstrap';
 import { getSpecificRace } from '../util/functions';
 import SpecificRace from './SpecificRace';
 

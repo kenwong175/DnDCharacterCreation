@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 
 function Overall({overall}) {
     let srace = overall.srace;
@@ -8,7 +8,9 @@ function Overall({overall}) {
     let rChoices = overall.rChoices;
     let cChoices = overall.cChoices;
     return (
-        <div>
+        <Row>
+            <div className="col-4"></div>
+            <div className="col-8">
             {/* From Race */}
             {srace.languages&&srace.languages.map((el,i)=>
             <div key={i}>{el.index}</div>)}
@@ -41,8 +43,11 @@ function Overall({overall}) {
                     return <div key={index}>{key}:{score[key]}</div>
                 }
             })}
+            </div>
+            <div className="col-12">
             <Button variant="success">Save&Confirm</Button>{' '}
-        </div>
+            </div>
+        </Row>
     )
 }
 
