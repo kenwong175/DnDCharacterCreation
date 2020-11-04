@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Row } from 'react-bootstrap';
+import { Button, Image, Row } from 'react-bootstrap';
 
 function Overall({overall}) {
     let srace = overall.srace;
@@ -9,7 +9,9 @@ function Overall({overall}) {
     let cChoices = overall.cChoices;
     return (
         <Row>
-            <div className="col-4"></div>
+            <div className="col-4">
+                <Image src={sclass.pic} />
+            </div>
             <div className="col-8">
             {/* From Race */}
             {srace.languages&&srace.languages.map((el,i)=>

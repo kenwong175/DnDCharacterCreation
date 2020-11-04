@@ -52,7 +52,7 @@ function App() {
           <Race race={allRace} srace={specRace} setSrace={setSpecRace} choices={rChoices} setMyChoice={setRaceChoice} setChoices={setChoices}/>
         </Route>
         <Route path="/class" >
-          <Class classes={allClass} sclass={specClass} setSclass={setSpecClass} choices={cChoices} setMyChoice={setClassChoice} setChoices={setChoices}/>
+          <Class classes={allClass} srace={specRace} sclass={specClass} setSclass={setSpecClass} choices={cChoices} setMyChoice={setClassChoice} setChoices={setChoices}/>
         </Route>
         <Route path="/ability" >
           <h1>Ability Score</h1>

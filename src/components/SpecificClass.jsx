@@ -1,14 +1,13 @@
 import React from 'react'
 import { Image, Row } from 'react-bootstrap';
 import Choices from './Choices';
-import {DB, DBa} from "../util/images"
 
 function SpecificClass({sclass, setChoices, choices, setMyChoice}) {
     console.log(sclass);
     return (
         <Row>
             <div className="col-4">
-                <Image src={DB}/>
+                <Image src={sclass.pic}/>
                 {/* <Image src={DBa}/> */}
             </div>
             <div className="col-4">

@@ -5,13 +5,13 @@ import SpecificClass from './SpecificClass';
 
 
 
-function Class({classes, sclass, setSclass, setChoices, choices, setMyChoice}) {
+function Class({srace, classes, sclass, setSclass, setChoices, choices, setMyChoice}) {
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" title={sclass.name?sclass.name:"Choose Your Class"}>
                 {classes.map((el, i) => (
                     <div key={i} className="text-center">
-                        <Dropdown.Item onClick={() => getSpecificClass(el, setSclass, setMyChoice)} to={`/class/${el.index}`}>{el.name}</Dropdown.Item>
+                        <Dropdown.Item onClick={() => getSpecificClass(el, setSclass, setMyChoice, srace)} to={`/class/${el.index}`}>{el.name}</Dropdown.Item>
                     </div>
                 ))}
             </DropdownButton>

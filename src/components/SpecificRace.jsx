@@ -1,12 +1,14 @@
 import React from 'react'
-import { Row } from 'react-bootstrap';
+import { Image, Row } from 'react-bootstrap';
 import Choices from './Choices';
 
 function SpecificRace({srace, setChoices, choices, setMyChoice}) {
     console.log(srace);
     return (
         <Row>
-            <div className="col-4"></div>
+            <div className="col-4">
+                <Image src={srace.pic} />
+            </div>
             <div className="col-4">
                 {srace.language_options && <Choices setMyChoice={setMyChoice} index={srace.language_options.choose} choice={srace.language_options.choose} choices={choices} selection={srace.language_options} setChoices={setChoices} />}
                 {srace.starting_proficiency_options && <Choices setMyChoice={setMyChoice} index={srace.starting_proficiency_options.choose} choice={srace.starting_proficiency_options.choose} choices={choices} selection={srace.starting_proficiency_options} setChoices={setChoices} />}

@@ -5,6 +5,7 @@ import SpecificRace from './SpecificRace';
 
 
 function Race({race, srace, setSrace, setChoices, choices, setMyChoice}) {
+    console.log(srace);
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" title={srace.name?srace.name:"Choose Your Race"}>
