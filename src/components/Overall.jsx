@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Image, Row } from 'react-bootstrap';
+import { saveData } from '../util/functions';
 
 function Overall({overall}) {
     let srace = overall.srace;
@@ -46,10 +47,10 @@ function Overall({overall}) {
             <div>{srace.speed}</div>
             </div>
             <div className="mb-3"><b>Proficiencies:</b>
-                    {rChoices.proficiencies0 && rChoices.proficiencies0.map(el => <div>{el}</div>)}
-                    {rChoices.proficiencies1 && rChoices.proficiencies1.map(el => <div>{el}</div>)}
-                    {rChoices.proficiencies2 && rChoices.proficiencies2.map(el => <div>{el}</div>)}
-                    {rChoices.proficiencies3 && rChoices.proficiencies3.map(el => <div>{el}</div>)}
+                    {Array.isArray(rChoices.proficiencies0) ? rChoices.proficiencies0.map(el => <div>{el}</div>) : <div>{rChoices.proficiencies0}</div>}
+                    {Array.isArray(rChoices.proficiencies1) ? rChoices.proficiencies1.map(el => <div>{el}</div>) : <div>{rChoices.proficiencies1}</div>}
+                    {Array.isArray(rChoices.proficiencies2) ? rChoices.proficiencies2.map(el => <div>{el}</div>) : <div>{rChoices.proficiencies2}</div>}
+                    {Array.isArray(rChoices.proficiencies3) ? rChoices.proficiencies3.map(el => <div>{el}</div>) : <div>{rChoices.proficiencies3}</div>}
                 </div>
                 <div className="mb-3"><b>Trait:</b>
                     <div>{rChoices.trait1 ? rChoices.trait1 : "N/A"}</div>
@@ -80,7 +81,7 @@ function Overall({overall}) {
                 </div>
             </div>
             <div className="col-12">
-            <Button variant="success">Save&Confirm</Button>{' '}
+            <Button onClick={()=>saveData(overall)} variant="success">Save&Confirm</Button>{' '}
             </div>
         </Row>
     )

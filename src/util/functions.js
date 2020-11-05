@@ -8,7 +8,8 @@ import {HOB,HOC,HOBa,HOD,HOF,HOM,HOP,HOR,HORg,HOS,HOW,HOWiz} from "./images.js"
 import {HaB,HaC,HaBa,HaD,HaF,HaM,HaP,HaR,HaRg,HaS,HaW,HaWiz} from "./images.js"
 import {HB,HC,HBa,HD,HF,HM,HP,HR,HRg,HS,HW,HWiz} from "./images.js"
 import {TB,TC,TBa,TD,TF,TM,TP,TR,TRg,TS,TW,TWiz} from "./images.js"
-
+import firebase from "./firebase";
+const db = firebase.firestore();
 
 let url = "https://www.dnd5eapi.co"
 
@@ -487,7 +488,7 @@ export function resetScore(cb){
     cb({arr:[15,14,13,12,10,8]})
 }
 
-export function setAll(state, cb, srace, sclass, score, rChoices, cChoices){
+export function setAll(doc, cb, srace, sclass, score, rChoices, cChoices){
     let tempScore = {...score};
     srace.ability_bonuses.map(el =>{
         if(tempScore.hasOwnProperty(el.ability_score.name)){
@@ -495,15 +496,16 @@ export function setAll(state, cb, srace, sclass, score, rChoices, cChoices){
         }
         return tempScore;
     })
-    cb({srace,sclass,tempScore,rChoices,cChoices});
+    cb({doc,srace,sclass,tempScore,rChoices,cChoices});
 }
 
-// export async function saveData(...overall){
-//     db.collection("characters").add({...overall})
-//     .then(function(docRef) {
-//         console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function(error) {
-//         console.error("Error adding document: ", error);
-//     });
-// }
+export async function saveData(overall){
+    db.collection("characters").add({overall})
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+}
+

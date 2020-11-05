@@ -4,7 +4,6 @@ const auth = firebase.auth();
 export async function newSignUp(email, password) {
     try {
         let response = await auth.createUserWithEmailAndPassword(email, password);
-        console.log(response);
     } catch (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -13,10 +12,16 @@ export async function newSignUp(email, password) {
       
 }
 
-export async function SignIn(email, password) {
+export async function SignIn(email, password, cb) {
     try {
         let response = await auth.signInWithEmailAndPassword(email, password);
-        console.log(response);
+        if(response){
+        cb("Signed In Successfully");
+
+        setInterval(()=>{
+            cb(null);
+        },2000);
+        }
     } catch (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -25,10 +30,15 @@ export async function SignIn(email, password) {
       
 }
 
-export async function SignOut() {
+export async function SignOut(cb) {
     try {
         let response = await auth.signOut();
-        console.log(response);
+        if(response){
+            cb("Signed Out Successfully");
+            setInterval(()=>{
+                cb(null);
+            },2000);
+            }
     } catch (error) {
         var errorCode = error.code;
         var errorMessage = error.message;

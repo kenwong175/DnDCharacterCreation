@@ -1,17 +1,19 @@
 import React from 'react'
-import { newSignUp, SignIn, SignOut} from '../util/login'
+import { Alert, Container } from 'react-bootstrap'
+import { newSignUp, SignIn} from '../util/login'
 
-function Login({query,changeHandler}) {
+function Login({msg,setMsg,query,changeHandler}) {
     return (
-        <div>
-            <p>Hello, Please sign in.</p>
-            <input name="email" onChange={changeHandler}/>
-            <input name="password" onChange={changeHandler}/>
+        <Container>
+            <h1>Home</h1>
+            <p className="status">Hello, please sign in to access.</p>
+            {msg&&<Alert variant="success">{msg}</Alert>}
+            <input className="form-control col-4" placeholder="email address" name="email" onChange={changeHandler}/>
+            <input className="form-control col-4 mb-2" type="password" placeholder="password" name="password" onChange={changeHandler}/>
+            <button onClick={()=>SignIn(query.email,query.password, setMsg)}>Sign in</button>
+            <p className="mt-3">Do not have an account? Sign Up here!</p>
             <button onClick={()=>newSignUp(query.email,query.password)}>Sign up</button>
-            <button onClick={()=>SignIn(query.email,query.password)}>Sign in</button>
-            <button onClick={SignOut}>Sign Out</button>
-            <button>Check</button>
-        </div>
+        </Container>
     )
 }
 

@@ -13,10 +13,10 @@ function SpecificRace({srace, setChoices, choices, setMyChoice}) {
                 {srace.starting_proficiency_options && <Choices setMyChoice={setMyChoice} index={srace.starting_proficiency_options.choose} choice={srace.starting_proficiency_options.choose} choices={choices} selection={srace.starting_proficiency_options} setChoices={setChoices} />}
                 {srace.trait_options && <Choices setMyChoice={setMyChoice} index={srace.trait_options.choose} choice={srace.trait_options.choose} selection={srace.trait_options} choices={choices} setChoices={setChoices} />}
                 <div className="mb-3"><b>Proficiencies:</b>
-                    {choices.proficiencies0 && choices.proficiencies0.map(el => <div>{el}</div>)}
-                    {choices.proficiencies1 && choices.proficiencies1.map(el => <div>{el}</div>)}
-                    {choices.proficiencies2 && choices.proficiencies2.map(el => <div>{el}</div>)}
-                    {choices.proficiencies3 && choices.proficiencies3.map(el => <div>{el}</div>)}
+                    {Array.isArray(choices.proficiencies0) ? choices.proficiencies0.map(el => <div>{el}</div>) : <div>{choices.proficiencies0}</div>}
+                    {Array.isArray(choices.proficiencies1) ? choices.proficiencies1.map(el => <div>{el}</div>) : <div>{choices.proficiencies1}</div>}
+                    {Array.isArray(choices.proficiencies2) ? choices.proficiencies2.map(el => <div>{el}</div>) : <div>{choices.proficiencies2}</div>}
+                    {Array.isArray(choices.proficiencies3) ? choices.proficiencies3.map(el => <div>{el}</div>) : <div>{choices.proficiencies3}</div>}
                 </div>
                 <div className="mb-3"><b>Trait:</b>
                     <div>{choices.trait1 ? choices.trait1 : "N/A"}</div>
