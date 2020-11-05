@@ -21,9 +21,9 @@ Users can choose based on their preference and stats will be shown upon selectio
 
 Initial plans when going through the layout of the app
 
-[1](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
-[2](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
-[3](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
+![1](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
+![2](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
+![3](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
 
 ### User Stories
 
