@@ -497,3 +497,13 @@ export function setAll(state, cb, srace, sclass, score, rChoices, cChoices){
     })
     cb({srace,sclass,tempScore,rChoices,cChoices});
 }
+
+// export async function saveData(...overall){
+//     db.collection("characters").add({...overall})
+//     .then(function(docRef) {
+//         console.log("Document written with ID: ", docRef.id);
+//     })
+//     .catch(function(error) {
+//         console.error("Error adding document: ", error);
+//     });
+// }
