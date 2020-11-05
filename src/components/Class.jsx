@@ -7,7 +7,7 @@ import SpecificClass from './SpecificClass';
 
 function Class({srace, classes, sclass, setSclass, setChoices, choices, setMyChoice}) {
     return (
-        <div>
+        <div className="mt-3">
             <DropdownButton id="dropdown-basic-button" title={sclass.name?sclass.name:"Choose Your Class"}>
                 {classes.map((el, i) => (
                     <div key={i} className="text-center">

@@ -40,3 +40,7 @@
 img {
   width: 100%;
 }
+
+.text {
+  text-transform: capitalize;
+}
