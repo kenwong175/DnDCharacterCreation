@@ -27,47 +27,42 @@ Initial plans when going through the layout of the app
 
 ### User Stories
 
-A story of the project user, that explains the use of the project.
+User login page powered by Firebase
+![1](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%207.55.43%20PM.png)
 
-```
-Example:
+User to be able to view all characters
+![2](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.04.35%20PM.png)
 
-User must be able to:
+User to be able to select races and classes
+![3](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.09%20PM.png)
+![4](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.46%20PM.png)
 
-- View Example
-- Blablabla
-- Search Example
-- Fine Example
-- etc..
-
-```
-
----
+User to be able to see the overall selections and save
+![5](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.06.32%20PM.png)
 
 ## Planning and Development Process
 
-A basic story of your planning and developing this project.
+Started with the react-app coding for API calls from the DnD API. Used hooks to store the data from the API calls and populate the selection screen. Compiled all into one Overall page before moving on to the CSS styling. Firebase storage and login was done last. 
 
 ### Problem-Solving Strategy
 
-What strategy did you use to solve your problems.
+Throughout the project, the need to keep track of the API data was important to make sure the data doesn't get called or assigned to the wrong states. 
+Some of the data is in array or similar types and there was a need to give it a unique designation to store them in separate keys.
+For the Firebase, I went to get help from my Instructor, Ebere and TA Siu Sing as there were some issues with authenticating the logins.  
 
 ### Unsolved problems
 
-List unsolved problems which would be fixed in future iterations.
+A lot more of the DnD data for character creation(eg. subclasses, spells, player name, character name) was left out from the project.
 
 ## APIs Used
 
-List your APIs you have used in this project and explain why did you use it.
+DnD 5E API - http://www.dnd5eapi.co/docs/#intro
 
----
 
 ## Acknowledgments
 
-
----
+Thanks to my Instructor Ebere, TAs Siu Sing & Tristan, and fellow GA SEI-25 coursemates for all the help and advice given during the project.
 
  ## References
-
-Wireframe
-https://www.figma.com/file/LHEQGA4CZKVLvXTWmEPSTi/Wireframe-Project-2?node-id=0%3A1
+Dungeons and Dragons Character Creation Guide - https://www.youtube.com/watch?v=ZcNgj0KPYuA
+Baldur's Gate Character Creation Video - https://www.youtube.com/watch?v=pXxcA1TSL-k
