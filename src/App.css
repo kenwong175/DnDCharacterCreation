@@ -44,3 +44,7 @@ img {
 .text {
   text-transform: capitalize;
 }
+
+.create {
+  background-color: #007bff;
+}

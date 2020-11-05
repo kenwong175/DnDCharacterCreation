@@ -500,12 +500,70 @@ export function setAll(doc, cb, srace, sclass, score, rChoices, cChoices){
 }
 
 export async function saveData(overall){
-    db.collection("characters").add({overall})
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+    console.log(overall);
+    if(overall.doc===""){
+        db.collection("characters").add({overall})
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+    } else {
+        db.collection("characters").doc(overall.doc).set({overall})
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+    }
+    
+    
 }
 
+export async function getData(cb){
+    const colData = await db.collection("characters");
+
+    // console.log(colData);
+    //to listen only once .get().then().catch()
+    colData.onSnapshot((snapshot)=>{
+        //success
+        let arr = [];
+        snapshot.forEach(doc=>{
+            console.log(doc.id, "=>", doc.data());
+            let data= {id:doc.id, "race":doc.data().overall.srace.name, "class":doc.data().overall.sclass.name, "pic":doc.data().overall.sclass.pic};
+            arr.push(data);
+        });
+        cb(arr);
+    },
+    (err)=>{
+        //if error
+    }
+    );
+}
+
+
+export async function loadOne(id, setRace,setClass,setRChoice,setCChoice,setScore,setDoc){
+    const colData = await db.collection("characters").doc(id).get();
+
+    if(colData.exists){
+        //set state
+        setRace(colData.data().overall.srace);
+        setClass(colData.data().overall.sclass);
+        setRChoice(colData.data().overall.rChoices);
+        setCChoice(colData.data().overall.cChoices);
+        setScore(colData.data().overall.tempScore);
+        setDoc(id);
+    } else {
+
+    }
+}
+
+export async function deleteChar(id){
+    const colData = await db.collection("characters").doc(id).delete();
+}
+
+export function clearDoc(setDoc){
+    setDoc("");
+}

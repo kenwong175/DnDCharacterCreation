@@ -3,6 +3,7 @@ import { Button, Image, Row } from 'react-bootstrap';
 import { saveData } from '../util/functions';
 
 function Overall({overall}) {
+    console.log(overall);
     let srace = overall.srace;
     let sclass = overall.sclass;
     let score = overall.tempScore;

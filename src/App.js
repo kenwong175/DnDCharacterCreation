@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Button} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { getClass, getRace, setAll, setChoices} from './util/functions';
+import { getClass, getData, getRace, setAll, setChoices} from './util/functions';
 import Race from './components/Race';
 import Class from './components/Class';
 import Overall from './components/Overall';
@@ -11,10 +11,12 @@ import AbilityScore from './components/AbilityScore';
 import Login from './components/Login';
 import PrivateRoute from './util/PrivateRoute';
 import { SignOut } from './util/login';
+import Characters from './components/Characters';
 
 function App() {
 
   const [doc, setDoc] = useState("");
+  const [characters, setChar] = useState([]);
   const [allRace, setAllRace] = useState([]);
   const [specRace, setSpecRace] = useState([]);
   const [rChoices, setRaceChoice] = useState({});
@@ -48,6 +50,7 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav variant="tabs" className="mr-auto">
             <NavLink className="mx-1" to="/">Home</NavLink>
+            <NavLink className="mx-1" onClick={()=>getData(setChar)} to="/char">Character</NavLink>
             <NavLink className="mx-1" to="/race">Race</NavLink>
             <NavLink className="mx-1" to="/class">Classes</NavLink>
             <NavLink className="mx-1" to="/ability">Ability Scores</NavLink>
@@ -61,6 +64,7 @@ function App() {
         <Route path="/" exact>
           <Login setMsg={setMsg} msg={msg} query={query} changeHandler={changeHandler}/>
         </Route>
+        <PrivateRoute path="/char" char={characters} component={Characters} setRace={setSpecRace} setClass={setSpecClass} setRChoice={setRaceChoice} setCChoice={setClassChoice} setScore={setScore} setDoc={setDoc} />
         <PrivateRoute path="/race" component={Race} race={allRace} srace={specRace} setSrace={setSpecRace} choices={rChoices} setMyChoice={setRaceChoice} setChoices={setChoices} />
         <PrivateRoute path="/class" component={Class} classes={allClass} srace={specRace} sclass={specClass} setSclass={setSpecClass} choices={cChoices} setMyChoice={setClassChoice} setChoices={setChoices}/>
         <PrivateRoute path="/ability" component={AbilityScore} setScore={setScore} score={score}/>
