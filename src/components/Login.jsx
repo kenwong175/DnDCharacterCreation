@@ -12,7 +12,7 @@ function Login({msg,setMsg,query,changeHandler}) {
             <input className="form-control col-4 mb-2" type="password" placeholder="password" name="password" onChange={changeHandler}/>
             <button onClick={()=>SignIn(query.email,query.password, setMsg)}>Sign in</button>
             <p className="mt-3">Do not have an account? Sign Up here!</p>
-            <button onClick={()=>newSignUp(query.email,query.password)}>Sign up</button>
+            <button onClick={()=>newSignUp(query.email,query.password, setMsg)}>Sign up</button>
         </Container>
     )
 }

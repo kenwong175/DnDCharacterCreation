@@ -1,9 +1,16 @@
 import firebase from "./firebase";
 const auth = firebase.auth();
 
-export async function newSignUp(email, password) {
+export async function newSignUp(email, password, cb) {
     try {
         let response = await auth.createUserWithEmailAndPassword(email, password);
+        if(response){
+            cb("Signed In Successfully");
+    
+            setInterval(()=>{
+                cb(null);
+            },2000);
+            }
     } catch (error) {
         var errorCode = error.code;
         var errorMessage = error.message;

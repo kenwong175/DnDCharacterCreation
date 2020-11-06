@@ -39,7 +39,6 @@ function App() {
 
   function changeHandler(e){
     setQuery((q) => ({ ...q, [e.target.name]: e.target.value }));
-    console.log(query);
   }
   
   return (

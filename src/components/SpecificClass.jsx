@@ -3,7 +3,6 @@ import { Image, Row } from 'react-bootstrap';
 import Choices from './Choices';
 
 function SpecificClass({sclass, setChoices, choices, setMyChoice}) {
-    console.log(choices);
     return (
         <Row className="mt-3">
             <div className="col-4">

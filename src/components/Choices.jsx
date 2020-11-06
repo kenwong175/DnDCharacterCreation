@@ -2,7 +2,6 @@ import React from 'react'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 
 function Choices({choice, selection, setChoices, choices, index, setMyChoice}) {
-    console.log(selection);
     return (
         <DropdownButton className="mb-3"id="dropdown-basic-button" title={`Choose ${choice}`}>
             {selection && selection.from.map((el, i) =>

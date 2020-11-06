@@ -27,7 +27,6 @@ export async function getSpecificClass(classes,cb, scb, race){
     scb({});
     await axios.get(`${url}${classes.url}`)
     .then(res=>{
-        console.log(race);
         //to get specific race
         let tempData = res.data;
         let pic;
@@ -375,7 +374,6 @@ export async function getSpecificClass(classes,cb, scb, race){
                     pic = HWiz;
             }
         }
-    console.log(tempData);
     tempData = {...tempData, pic};    
     cb(tempData);
     }).catch(err=>{
@@ -437,10 +435,6 @@ export async function getSpecificRace(race,cb,scb){
 }
 
 export function setChoices(selection, choices, number, index,cb){
-    console.log(selection.target.textContent);
-    console.log(selection.target.id+index);
-    console.log(choices);
-    console.log(number);
     let name = selection.target.id+index;
     let text = selection.target.textContent;
     if(name in choices){
@@ -470,18 +464,14 @@ export function setChoices(selection, choices, number, index,cb){
 }
 
 export function selScore (id,el,state,cb){
-    console.log(id);
-    console.log(el);
     let tempState = {...state};
     if(tempState.hasOwnProperty(id)){
         let revNum = tempState[id];
-        console.log(revNum);
         tempState.arr.push(revNum);
     }
     let index = tempState.arr.findIndex(num=>num===el);
     tempState.arr.splice(index,1);
     cb({...tempState, [id]:el});
-    console.log(state);
 }
 
 export function resetScore(cb){
@@ -500,7 +490,6 @@ export function setAll(doc, cb, srace, sclass, score, rChoices, cChoices){
 }
 
 export async function saveData(overall){
-    console.log(overall);
     if(overall.doc===""){
         db.collection("characters").add({overall})
         .then(function(docRef) {
@@ -525,20 +514,15 @@ export async function saveData(overall){
 export async function getData(cb){
     const colData = await db.collection("characters");
 
-    // console.log(colData);
-    //to listen only once .get().then().catch()
     colData.onSnapshot((snapshot)=>{
-        //success
         let arr = [];
         snapshot.forEach(doc=>{
-            console.log(doc.id, "=>", doc.data());
             let data= {id:doc.id, "race":doc.data().overall.srace.name, "class":doc.data().overall.sclass.name, "pic":doc.data().overall.sclass.pic};
             arr.push(data);
         });
         cb(arr);
     },
     (err)=>{
-        //if error
     }
     );
 }
