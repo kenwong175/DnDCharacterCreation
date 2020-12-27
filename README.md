@@ -22,25 +22,24 @@ Users can choose based on their preference and stats will be shown upon selectio
 ### Wireframes
 
 Initial plans when going through the layout of the app
-
-![1](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
-![2](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
-![3](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
+![1](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
+![2](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
+![3](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
 
 ### User Stories
 
 User login page powered by Firebase
-![1](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%207.55.43%20PM.png)
+![1](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%207.55.43%20PM.png)
 
 User to be able to view all characters
-![2](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.04.35%20PM.png)
+![2](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.04.35%20PM.png)
 
 User to be able to select races and classes
-![3](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.09%20PM.png)
-![4](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.46%20PM.png)
+![3](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.09%20PM.png)
+![4](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.46%20PM.png)
 
 User to be able to see the overall selections and save
-![5](https://github.com/kenwong175/P2-DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.06.32%20PM.png)
+![5](https://github.com/kenwong175/P2-DnDCharacterCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.06.32%20PM.png)
 
 ## Planning and Development Process
 
