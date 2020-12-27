@@ -2,7 +2,9 @@
 
 Dungeons and Dragons are one of the popular boardgames that are played with a group of friends. The game centers around a Game Master(GM) for narration and players who will interact with the scenario given. This app is designed for the Character Creation stages of the game.
 
-## Description
+## Link & Description
+
+Link: https://dndchar.herokuapp.com/
 
 This project aims to assist in character creation for the boardgame Dungeons and Dragons, which have a lot of different combinations of races, classes and proficiencies.
 
@@ -21,24 +23,24 @@ Users can choose based on their preference and stats will be shown upon selectio
 
 Initial plans when going through the layout of the app
 
-![1](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
-![2](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
-![3](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
+![1](https://github.com/kenwong175/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.09%20PM.png)
+![2](https://github.com/kenwong175/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.49.55%20PM.png)
+![3](https://github.com/kenwong175/DnDCharCreation/blob/master/src/wireframes/Screenshot%202020-11-05%20at%207.50.16%20PM.png)
 
 ### User Stories
 
 User login page powered by Firebase
-![1](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%207.55.43%20PM.png)
+![1](https://github.com/kenwong175/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%207.55.43%20PM.png)
 
 User to be able to view all characters
-![2](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.04.35%20PM.png)
+![2](https://github.com/kenwong175/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.04.35%20PM.png)
 
 User to be able to select races and classes
-![3](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.09%20PM.png)
-![4](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.46%20PM.png)
+![3](https://github.com/kenwong175/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.09%20PM.png)
+![4](https://github.com/kenwong175/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.05.46%20PM.png)
 
 User to be able to see the overall selections and save
-![5](https://git.generalassemb.ly/stralth/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.06.32%20PM.png)
+![5](https://github.com/kenwong175/DnDCharCreation/blob/master/src/screenshots/Screenshot%202020-11-05%20at%208.06.32%20PM.png)
 
 ## Planning and Development Process
 
@@ -52,6 +54,7 @@ For the Firebase, I went to get help from my Instructor, Ebere and TA Siu Sing a
 
 ### Unsolved problems
 
+Login and register uses the same form so there will be confusion when logging in.
 A lot more of the DnD data for character creation(eg. subclasses, spells, player name, character name) was left out from the project.
 
 ## APIs Used
